@@ -8,15 +8,15 @@
 // http://opensource.org/licenses/MIT
 /////////////////////////////////////////////
 
-#if SHARPDX
+#if VORTICE
 #if NETFX_CORE
 #if CORE
-namespace HelixToolkit.SharpDX.Core
+namespace HelixToolkit.Vortice.Core
 #else
 namespace HelixToolkit.UWP
 #endif
 #else
-namespace HelixToolkit.Wpf.SharpDX
+namespace HelixToolkit.Wpf.Vortice
 #endif
 #else
 namespace HelixToolkit.Wpf
@@ -26,16 +26,16 @@ namespace HelixToolkit.Wpf
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
-#if SHARPDX
-    using Vector3D = global::SharpDX.Vector3;
-    using Point3D = global::SharpDX.Vector3;
-    using Point = global::SharpDX.Vector2;
+#if VORTICE
+    using Vector3D = System.Numerics.Vector3;
+    using Point3D = System.Numerics.Vector3;
+    using Point = System.Numerics.Vector2;
     using Int32Collection = IntCollection;
     using Vector3DCollection = Vector3Collection;
     using Point3DCollection = Vector3Collection;
     using PointCollection = Vector2Collection;
     using DoubleOrSingle = System.Single;
-    using Matrix3D = global::SharpDX.Matrix;
+    using Matrix3D = System.Numerics.Matrix4x4;
     using HelixToolkit.Wpf;
 #else
     using System.Windows;

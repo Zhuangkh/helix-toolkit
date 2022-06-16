@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-#if SHARPDX
-using Vector2 = SharpDX.Vector2;
+#if VORTICE
+using Vector2 = System.Numerics.Vector2;
 using DoubleOrSingle = System.Single;
 #if NETFX_CORE
 #if CORE
-namespace HelixToolkit.SharpDX.Core
+namespace HelixToolkit.Vortice.Core
 #else
 namespace HelixToolkit.UWP
 #endif
 #else
-namespace HelixToolkit.Wpf.SharpDX
+namespace HelixToolkit.Wpf.Vortice
 #endif
 #else
 using Vector2 = System.Windows.Vector;

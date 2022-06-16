@@ -6,15 +6,15 @@
 //   A polygon triangulator for simple polygons with no holes. Expected runtime is O(n log n)
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-#if SHARPDX
+#if VORTICE
 #if NETFX_CORE
 #if CORE
-namespace HelixToolkit.SharpDX.Core
+namespace HelixToolkit.Vortice.Core
 #else
 namespace HelixToolkit.UWP
 #endif
 #else
-namespace HelixToolkit.Wpf.SharpDX
+namespace HelixToolkit.Wpf.Vortice
 #endif
 #else
 namespace HelixToolkit.Wpf
@@ -23,8 +23,8 @@ namespace HelixToolkit.Wpf
     using System;
     using System.Collections.Generic;
     using System.Linq;
-#if SHARPDX
-    using Point = global::SharpDX.Vector2;
+#if VORTICE
+    using Point = System.Numerics.Vector2;
     using Int32Collection = System.Collections.Generic.List<int>;
     using DoubleOrSingle = System.Single;
 #else

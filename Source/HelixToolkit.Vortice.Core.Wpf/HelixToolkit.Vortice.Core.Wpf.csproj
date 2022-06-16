@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+      <UseWindowsForms>true</UseWindowsForms>
+      <Copyright>Copyright (C) Helix Toolkit 2019.</Copyright>
+      <PackageLicenseUrl></PackageLicenseUrl>
+      <PackageProjectUrl>http://www.helix-toolkit.org/</PackageProjectUrl>
+      <PackageIconUrl>https://avatars3.githubusercontent.com/u/8432523?s=200&amp;v=4</PackageIconUrl>
+      <RepositoryUrl>https://github.com/helix-toolkit/helix-toolkit</RepositoryUrl>
+
+      <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+      <Company>HelixToolkit</Company>
+      <Authors>HelixToolkit Contributors</Authors>
+      <Version>0.0.0.1</Version>
+      <RepositoryType>git</RepositoryType>
+      <PackageTags>Vortice; DirectX; 3D;</PackageTags>
+      <RootNamespace>HelixToolkit.Wpf.Vortice</RootNamespace>
+      <DelaySign>false</DelaySign>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DX11; DX11_1; MSAA; Vortice; COREWPF</DefineConstants>
+    <OutputPath>bin\Debug\</OutputPath>
+    <NoWarn>1701;1702; 1591;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;DX11; DX11_1; MSAA; Vortice; COREWPF</DefineConstants>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>bin\Release\HelixToolkit.Vortice.Core.Wpf.xml</DocumentationFile>
+    <NoWarn>1701;1702; 1591;</NoWarn>
+  </PropertyGroup>
+
+  <Import Project="..\HelixToolkit.Vortice.SharedModel\HelixToolkit.Vortice.SharedModel.projitems" Label="Shared" />
+
+  <Import Project="..\HelixToolkit.Wpf.Vortice.Shared\HelixToolkit.Wpf.Vortice.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="Vortice.Direct2D1" Version="2.1.20-beta" />
+    <PackageReference Include="Vortice.Direct3D11" Version="2.1.20-beta" />
+    <PackageReference Include="Vortice.Direct3D9" Version="2.1.20-beta" />
+    <PackageReference Include="Vortice.DXGI" Version="2.1.20-beta" />
+    <PackageReference Include="Vortice.Mathematics" Version="1.4.16" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub">
+        <Version>1.0.0</Version>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\HelixToolkit.Vortice.Core\HelixToolkit.Vortice.Core.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="Properties\Resources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Resources.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Update="Properties\Resources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+</Project>

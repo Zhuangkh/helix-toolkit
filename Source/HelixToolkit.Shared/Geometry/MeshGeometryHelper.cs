@@ -6,15 +6,15 @@
 //   Provides helper methods for mesh geometries.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-#if SHARPDX
+#if VORTICE
 #if NETFX_CORE
 #if CORE
-namespace HelixToolkit.SharpDX.Core
+namespace HelixToolkit.Vortice.Core
 #else
 namespace HelixToolkit.UWP
 #endif
 #else
-namespace HelixToolkit.Wpf.SharpDX
+namespace HelixToolkit.Wpf.Vortice
 #endif
 #else
 namespace HelixToolkit.Wpf
@@ -24,10 +24,10 @@ namespace HelixToolkit.Wpf
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Text;
-#if SHARPDX
-    using Vector3D = global::SharpDX.Vector3;
-    using Point3D = global::SharpDX.Vector3;
-    using Point = global::SharpDX.Vector2;
+#if VORTICE
+    using Vector3D = System.Numerics.Vector3;
+    using Point3D = System.Numerics.Vector3;
+    using Point = System.Numerics.Vector2;
     using Int32Collection = IntCollection;
     using Vector3DCollection = Vector3Collection;
     using Point3DCollection = Vector3Collection;
@@ -326,7 +326,7 @@ namespace HelixToolkit.Wpf
                 }
             }
 
-#if SHARPDX
+#if VORTICE
             return new MeshGeometry3D { Positions = p, TriangleIndices = new IntCollection(ti), Normals = n, TextureCoordinates = tc };
 #else
             return new MeshGeometry3D { Positions = p, TriangleIndices = ti, Normals = n, TextureCoordinates = tc };
@@ -386,7 +386,7 @@ namespace HelixToolkit.Wpf
                 int j;
                 ti.Add(dict.TryGetValue(index, out j) ? newIndex[j] : newIndex[index]);
             }
-#if SHARPDX
+#if VORTICE
             var result = new MeshGeometry3D { Positions = p, TriangleIndices = new IntCollection(ti), };
 #else
             var result = new MeshGeometry3D { Positions = p, TriangleIndices = ti };

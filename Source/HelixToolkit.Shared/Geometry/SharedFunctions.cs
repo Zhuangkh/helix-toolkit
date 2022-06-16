@@ -1,26 +1,27 @@
 ﻿using System.Linq;
 using System;
 using System.Runtime.CompilerServices;
-#if SHARPDX
+#if VORTICE
 #if NETFX_CORE
 #if CORE
-namespace HelixToolkit.SharpDX.Core
+namespace HelixToolkit.Vortice.Core
 #else
 namespace HelixToolkit.UWP
 #endif
 #else
-namespace HelixToolkit.Wpf.SharpDX
+namespace HelixToolkit.Wpf.Vortice
 #endif
 #else
 namespace HelixToolkit.Wpf
 #endif
 {
-#if SHARPDX
-    using global::SharpDX;
-    using Vector3D = global::SharpDX.Vector3;
-    using Point3D = global::SharpDX.Vector3;
+#if VORTICE
+    using global::Vortice;
+    using Vector3D = System.Numerics.Vector3;
+    using Point3D = System.Numerics.Vector3;
     using DoubleOrSingle = System.Single;
-    using Vector = global::SharpDX.Vector2;
+    using Vector = System.Numerics.Vector2;
+    using System.Numerics;
 #else
     using System.Windows;
     using System.Windows.Media;
@@ -41,7 +42,7 @@ namespace HelixToolkit.Wpf
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3D CrossProduct(ref Vector3D first, ref Vector3D second)
         {
-#if SHARPDX
+#if VORTICE
             return Vector3.Cross(first, second);
 #else
             return Vector3D.CrossProduct(first, second);
@@ -51,7 +52,7 @@ namespace HelixToolkit.Wpf
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3D CrossProduct(Vector3D first, Vector3D second)
         {
-#if SHARPDX
+#if VORTICE
             return Vector3.Cross(first, second);
 #else
             return Vector3D.CrossProduct(first, second);
@@ -144,7 +145,7 @@ namespace HelixToolkit.Wpf
         {
             return new Vector3D(vector.X, vector.Y, vector.Z);
         }
-#if SHARPDX
+#if VORTICE
 #if !NETFX_CORE
         /// <summary>
         /// 
@@ -168,22 +169,22 @@ namespace HelixToolkit.Wpf
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static System.Windows.Media.Media3D.Vector3DCollection ToVector3DCollection(SharpDX.Vector3Collection collection)
+        public static System.Windows.Media.Media3D.Vector3DCollection ToVector3DCollection(Vortice.Vector3Collection collection)
         {
             return new System.Windows.Media.Media3D.Vector3DCollection(collection.Select(v => ToVector3D(ref v)));
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static System.Windows.Media.Media3D.Point3DCollection ToPoint3DCollection(SharpDX.Vector3Collection collection)
+        public static System.Windows.Media.Media3D.Point3DCollection ToPoint3DCollection(Vortice.Vector3Collection collection)
         {
             return new System.Windows.Media.Media3D.Point3DCollection(collection.Select(v => ToPoint3D(ref v)));
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static System.Windows.Media.PointCollection ToPointCollection(SharpDX.Vector2Collection collection)
+        public static System.Windows.Media.PointCollection ToPointCollection(Vortice.Vector2Collection collection)
         {
             return new System.Windows.Media.PointCollection(collection.Select(v => new System.Windows.Point(v.X, v.Y)));
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static System.Windows.Media.Int32Collection ToInt32Collection(SharpDX.IntCollection collection)
+        public static System.Windows.Media.Int32Collection ToInt32Collection(Vortice.IntCollection collection)
         {
             return new System.Windows.Media.Int32Collection(collection);
         }
@@ -192,7 +193,7 @@ namespace HelixToolkit.Wpf
         /// </summary>
         /// <param name="mesh"></param>
         /// <returns></returns>
-        public static System.Windows.Media.Media3D.MeshGeometry3D ToMeshGeometry3D(SharpDX.MeshGeometry3D mesh)
+        public static System.Windows.Media.Media3D.MeshGeometry3D ToMeshGeometry3D(Vortice.MeshGeometry3D mesh)
         {
             return new System.Windows.Media.Media3D.MeshGeometry3D()
             {

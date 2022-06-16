@@ -6,12 +6,12 @@
 //   Represents errors that occurs in the Helix 3D Toolkit.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-#if SHARPDX
+#if VORTICE
 #if !NETFX_CORE
-namespace HelixToolkit.Wpf.SharpDX
+namespace HelixToolkit.Wpf.Vortice
 #else
 #if CORE
-namespace HelixToolkit.SharpDX.Core
+namespace HelixToolkit.Vortice.Core
 #else
 namespace HelixToolkit.UWP
 #endif

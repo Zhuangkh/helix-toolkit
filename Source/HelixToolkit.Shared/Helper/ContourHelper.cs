@@ -1,12 +1,12 @@
-﻿#if SHARPDX
+﻿#if VORTICE
 #if NETFX_CORE
 #if CORE
-namespace HelixToolkit.SharpDX.Core
+namespace HelixToolkit.Vortice.Core
 #else
 namespace HelixToolkit.UWP
 #endif
 #else
-namespace HelixToolkit.Wpf.SharpDX
+namespace HelixToolkit.Wpf.Vortice
 #endif
 #else
 namespace HelixToolkit.Wpf
@@ -16,10 +16,10 @@ namespace HelixToolkit.Wpf
     using System.Collections.Generic;
     using System.Linq;
     using System.Runtime.CompilerServices;
-#if SHARPDX
-    using Vector3D = global::SharpDX.Vector3;
-    using Point3D = global::SharpDX.Vector3;
-    using Point = global::SharpDX.Vector2;
+#if VORTICE
+    using Vector3D = System.Numerics.Vector3;
+    using Point3D = System.Numerics.Vector3;
+    using Point = System.Numerics.Vector2;
     using DoubleOrSingle = System.Single;
 #else
     using Vector2D = System.Windows.Vector;

@@ -10,25 +10,25 @@ namespace XRayDemo
     using System.Windows.Media.Animation;
     using System.Windows.Media.Imaging;
     using DemoCore;
-    using HelixToolkit.Wpf.SharpDX;
-    using SharpDX;
+    using HelixToolkit.Wpf.Vortice;
+    using Vortice;
     using Media3D = System.Windows.Media.Media3D;
     using Point3D = System.Windows.Media.Media3D.Point3D;
     using Vector3D = System.Windows.Media.Media3D.Vector3D;
     using Transform3D = System.Windows.Media.Media3D.Transform3D;
     using Color = System.Windows.Media.Color;
-    using Plane = SharpDX.Plane;
-    using Vector3 = SharpDX.Vector3;
+    using Plane = Vortice.Plane;
+    using Vector3 = Vortice.Vector3;
     using Colors = System.Windows.Media.Colors;
-    using Color4 = SharpDX.Color4;
+    using Color4 = Vortice.Color4;
     using HelixToolkit.Wpf;
     using System.IO;
     using System.Collections.Generic;
     using System.Linq;
-    using SharpDX.Direct3D11;
+    using Vortice.Direct3D11;
     using System.Windows;
     using System.Windows.Data;
-    using HelixToolkit.Wpf.SharpDX.Extensions;
+    using HelixToolkit.Wpf.Vortice.Extensions;
 
     public class MainViewModel : BaseViewModel
     {
@@ -89,7 +89,7 @@ namespace XRayDemo
             // ----------------------------------------------
             // titles
             this.Title = "Lighting Demo";
-            this.SubTitle = "WPF & SharpDX";
+            this.SubTitle = "WPF & Vortice";
 
             // ----------------------------------------------
             // camera setup

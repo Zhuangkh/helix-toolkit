@@ -3,9 +3,9 @@ The MIT License (MIT)
 Copyright (c) 2018 Helix Toolkit contributors
 */
 #if DX11_1
-using Device = SharpDX.Direct3D11.Device1;
+using Device = SharpDX.Direct3D11.ID3D11Device1;
 #else
-using Device = SharpDX.Direct3D11.Device;
+using Device = SharpDX.Direct3D11.ID3D11Device ;
 #endif
 using System;
 using HelixToolkit.SharpDX.Core;

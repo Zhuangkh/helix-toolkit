@@ -7,23 +7,23 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-#if SHARPDX
+#if VORTICE
 #if NETFX_CORE
 #if CORE
-namespace HelixToolkit.SharpDX.Core
+namespace HelixToolkit.Vortice.Core
 #else
 namespace HelixToolkit.UWP
 #endif
 #else
-namespace HelixToolkit.Wpf.SharpDX
+namespace HelixToolkit.Wpf.Vortice
 #endif
 #else
 namespace HelixToolkit.Wpf
 #endif
 {
-#if SHARPDX
+#if VORTICE
     using Int32Collection = System.Collections.Generic.List<int>;
-    using PointCollection = System.Collections.Generic.List<global::SharpDX.Vector2>;
+    using PointCollection = System.Collections.Generic.List<System.Numerics.Vector2>;
 #else
     using System.Windows.Media;
 #endif

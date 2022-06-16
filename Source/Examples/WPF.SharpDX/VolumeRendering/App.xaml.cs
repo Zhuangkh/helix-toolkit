@@ -1,4 +1,4 @@
-﻿using HelixToolkit.Wpf.SharpDX.Utilities;
+﻿using HelixToolkit.Wpf.Vortice.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
