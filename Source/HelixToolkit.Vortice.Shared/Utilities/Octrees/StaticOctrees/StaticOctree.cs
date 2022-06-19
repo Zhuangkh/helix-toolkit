@@ -530,7 +530,7 @@ namespace HelixToolkit.UWP
                 for (var i = octant.Start + 1; i < octant.End; ++i)
                 {
                     var bound = GetBoundingBoxFromItem(ref Objects[i]);
-                    BoundingBox.Merge(ref b, ref bound, out b);
+                    b = BoundingBox.CreateMerged(b, bound);
                 }
                 return b;
             }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Matrix = System.Numerics.Matrix4x4;
+using System.Numerics;
 
 #if !NETFX_CORE
 namespace HelixToolkit.Wpf.Vortice

@@ -20,6 +20,7 @@ namespace HelixToolkit.UWP
     namespace Model.Components
     {
         using System;
+        using System.Numerics;
         using Scene;
 
         public sealed class GeometryBoundManager : IDisposable

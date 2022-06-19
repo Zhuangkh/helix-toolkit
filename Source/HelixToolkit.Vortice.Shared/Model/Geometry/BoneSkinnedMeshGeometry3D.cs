@@ -21,6 +21,7 @@ namespace HelixToolkit.UWP
 {
     using Utilities;
     using Core;
+    using System.Numerics;
 #if !NETFX_CORE
     [Serializable]
 #endif
@@ -113,8 +114,8 @@ namespace HelixToolkit.UWP
                     var j = 0;
                     for (; j < singleBone.Positions.Count - 6; j += 3)
                     {
-                        positions.Add(Vector3.TransformCoordinate(singleBone.Positions[j], bones[bones[i].ParentIndex].BindPose));
-                        positions.Add(Vector3.TransformCoordinate(singleBone.Positions[j + 1], bones[bones[i].ParentIndex].BindPose));
+                        positions.Add(Vector3.Transform(singleBone.Positions[j], bones[bones[i].ParentIndex].BindPose));
+                        positions.Add(Vector3.Transform(singleBone.Positions[j + 1], bones[bones[i].ParentIndex].BindPose));
                         positions.Add(bones[i].BindPose.TranslationVector);
                         boneIds.Add(new BoneIds() { Bone1 = bones[i].ParentIndex, Weights = new Vector4(1, 0, 0, 0) });
                         boneIds.Add(new BoneIds() { Bone1 = bones[i].ParentIndex, Weights = new Vector4(1, 0, 0, 0) });

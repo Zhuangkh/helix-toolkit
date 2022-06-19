@@ -52,7 +52,7 @@ namespace HelixToolkit.UWP
                 return new BoundingBox(Positions[item] - BoundOffset, Positions[item] + BoundOffset);
             }
             /// <summary>
-            /// Gets the maximum bound.
+            /// Gets the Max bound.
             /// </summary>
             /// <returns></returns>
             protected override BoundingBox GetMaxBound()
@@ -71,9 +71,9 @@ namespace HelixToolkit.UWP
             {
                 var point = Positions[obj];
                 //Bound contains point.
-                return source.Minimum.X <= point.X && source.Maximum.X >= point.X &&
-                    source.Minimum.Y <= point.Y && source.Maximum.Y >= point.Y &&
-                    source.Minimum.Z <= point.Z && source.Maximum.Z >= point.Z;
+                return source.Min.X <= point.X && source.Max.X >= point.X &&
+                    source.Min.Y <= point.Y && source.Max.Y >= point.Y &&
+                    source.Min.Z <= point.Z && source.Max.Z >= point.Z;
             }
 
             /// <summary>
@@ -124,7 +124,7 @@ namespace HelixToolkit.UWP
                 }
                 var isHit = false;
                 var bound = octant.Bound;
-                if (rayModel.Intersects(ref bound))
+                if (rayModel.Intersects(bound).HasValue)
                 {
                     isIntersect = true;
                     if (octant.Count == 0)
@@ -146,7 +146,7 @@ namespace HelixToolkit.UWP
                     for (var i = octant.Start; i < octant.End; ++i)
                     {
                         var v0 = Positions[Objects[i]];
-                        var p0 = Vector3.TransformCoordinate(v0, smvpm);
+                        var p0 = Vector3.Transform(v0, smvpm);
                         var pv = p0 - clickPoint;
                         var d = pv.Length() / context.RenderMatrices.DpiScale;
                         if (returnMultiple)
@@ -158,7 +158,7 @@ namespace HelixToolkit.UWP
                             dist = d;
                             result.IsValid = true;
                             result.ModelHit = model;
-                            var px = Vector3.TransformCoordinate(v0, modelMatrix);
+                            var px = Vector3.Transform(v0, modelMatrix);
                             result.PointHit = px;
                             result.Distance = (rayWS.Position - px).Length();
                             result.Tag = Objects[i];
@@ -214,7 +214,7 @@ namespace HelixToolkit.UWP
                     for (var i = octant.Start; i < octant.End; ++i)
                     {
                         var p = Positions[Objects[i]];
-                        if (sphere.Contains(ref p) != ContainmentType.Disjoint)
+                        if (sphere.Contains(p) != ContainmentType.Disjoint)
                         {
                             var d = (p - sphere.Center).Length();
                             if (resultTemp.Distance > d)

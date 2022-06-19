@@ -24,6 +24,7 @@ namespace HelixToolkit.UWP
         using Utilities;
         using Render;
         using Components;
+        using System.Numerics;
 
         /// <summary>
         /// 

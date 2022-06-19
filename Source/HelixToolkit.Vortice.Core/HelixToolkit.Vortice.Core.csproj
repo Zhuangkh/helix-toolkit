@@ -259,10 +259,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-      <PackageReference Include="Vortice.Direct2D1" Version="2.1.20-beta" />
-      <PackageReference Include="Vortice.Direct3D11" Version="2.1.20-beta" />
-      <PackageReference Include="Vortice.Direct3D9" Version="2.1.20-beta" />
-      <PackageReference Include="Vortice.DXGI" Version="2.1.20-beta" />
+      <PackageReference Include="Vortice.Direct2D1" Version="2.1.21-beta" />
+      <PackageReference Include="Vortice.Direct3D11" Version="2.1.21-beta" />
+      <PackageReference Include="Vortice.Direct3D9" Version="2.1.21-beta" />
+      <PackageReference Include="Vortice.DXGI" Version="2.1.21-beta" />
       <PackageReference Include="Vortice.Mathematics" Version="1.4.16" />
     <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.3.0" />
     <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
